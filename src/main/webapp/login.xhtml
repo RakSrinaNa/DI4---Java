@@ -13,18 +13,18 @@
             <div class="control-group">
                 <h:outputText class="control-label" for="inputNickName" value="UserName"/>
                 <div class="controls">
-                    <h:inputText id="inputNickName" binding="main" placeholder="Username"/>
+                    <h:inputText id="inputNickName" binding="userInfo.name" placeholder="Username"/>
                 </div>
             </div>
             <div class="control-group">
                 <h:outputText class="control-label" for="inputPassword"/>
                 <div class="controls">
-                    <h:inputSecret id="inputPassword" binding="password" placeholder="Password"/>
+                    <h:inputSecret id="inputPassword" binding="userInfo.password" placeholder="Password"/>
                 </div>
             </div>
             <div class="control-group">
                 <div class="controls">
-                    <h:commandButton action="#{authenticationService.login(user, password)}" type="button" class="btn" value="Log me in"/>
+                    <h:commandButton action="#{authenticationService.login(userInfo)}" type="button" class="btn" value="Log me in"/>
                 </div>
             </div>
         </h:form>

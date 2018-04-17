@@ -46,11 +46,7 @@ public class AuthenticationService implements Serializable {
     }
 
     String login(final String nickName, final String password) {
-        UserInfo userInfo = new UserInfo();
-        userInfo.setName(nickName);
-        userInfo.setPassword(password);
-        String result = login(userInfo);
-        userInfo.setLoggedIn(result.equals("success"));
-        return result;
+        boolean result = false;
+        return null;
     }
 }
