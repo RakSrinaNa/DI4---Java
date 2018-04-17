@@ -16,10 +16,8 @@
 
 package com.codetroopers.eput.ws;
 
-
 import com.codetroopers.eput.domain.entities.User;
 import com.codetroopers.eput.services.UserService;
-
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Application;
@@ -33,23 +31,25 @@ import java.util.List;
 @ApplicationPath("ws") // <1>
 @Path("/users") // <2>
 @Produces(MediaType.APPLICATION_JSON) // <3>
-public class UserWebService extends Application{
-
-    @Inject
-    UserService userService;
-
-    @GET // <4>
-    public List<User> users(){
-        return userService.all();
-    }
-
-    @POST // <4>
-    public User create(
-            @QueryParam("name") String name, // <5>
-            @QueryParam(value = "email") String email){
-        User user = new User(name, email);
-        user.password = "<FROMWS>";
-        return userService.create(user);
-    }
+public class UserWebService extends Application
+{
+	
+	@Inject
+	UserService userService;
+	
+	@GET // <4>
+	public List<User> users()
+	{
+		return userService.all();
+	}
+	
+	@POST // <4>
+	public User create(@QueryParam("name") String name, // <5>
+			@QueryParam(value = "email") String email)
+	{
+		User user = new User(name, email);
+		user.password = "<FROMWS>";
+		return userService.create(user);
+	}
 }
 //end::class[]

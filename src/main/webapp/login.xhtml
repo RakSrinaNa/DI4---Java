@@ -24,7 +24,7 @@
             </div>
             <div class="control-group">
                 <div class="controls">
-                    <input type="button" class="btn" value="Log me in"/>
+                    <h:commandButton action="#{authenticationService.login(user, password)}" type="button" class="btn" value="Log me in"/>
                 </div>
             </div>
         </h:form>
