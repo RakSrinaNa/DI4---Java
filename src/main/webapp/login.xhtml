@@ -11,15 +11,15 @@
 
         <h:form class="form-horizontal">
             <div class="control-group">
-                <label class="control-label" for="inputNickName">Username</label>
+                <h:outputText class="control-label" for="inputNickName" value="UserName"/>
                 <div class="controls">
-                    <input id="inputNickName" placeholder="Username"/>
+                    <h:inputText id="inputNickName" binding="main" placeholder="Username"/>
                 </div>
             </div>
             <div class="control-group">
-                <label class="control-label" for="inputPassword">Password</label>
+                <h:outputText class="control-label" for="inputPassword"/>
                 <div class="controls">
-                    <input id="inputPassword" placeholder="Password"/>
+                    <h:inputSecret id="inputPassword" binding="password" placeholder="Password"/>
                 </div>
             </div>
             <div class="control-group">

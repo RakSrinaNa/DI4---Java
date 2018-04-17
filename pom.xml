@@ -31,7 +31,10 @@
                 <artifactId>wildfly-maven-plugin</artifactId>
                 <version>1.2.1.Final</version>
                 <configuration>
-                    <javaOpts>-Djboss.http.port=8080</javaOpts>
+                    <javaOpts>
+                        <javaOpt>-Djboss.http.port=8080</javaOpt>
+                        <javaOpt>-Djboss.management.http.port=8888</javaOpt>
+                    </javaOpts>
                 </configuration>
             </plugin>
         </plugins>
@@ -43,5 +46,6 @@
         <wildfly.version>12.0.0.Final</wildfly.version>
         <wildfly.serverArgs>-Dee8.preview.mode=true</wildfly.serverArgs>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <wildfly.port>8888</wildfly.port>
     </properties>
 </project>
