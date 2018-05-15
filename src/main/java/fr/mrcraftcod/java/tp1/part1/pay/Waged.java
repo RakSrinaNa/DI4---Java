@@ -1,6 +1,8 @@
-package fr.mrcraftcod.java.tp1.pay;
+package fr.mrcraftcod.java.tp1.part1.pay;
 
 /**
+ * Represent someone that is paid.
+ * <p>
  * Created by Thomas Couchoud (MrCraftCod - zerderr@gmail.com) on 19/04/2018.
  *
  * @author Thomas Couchoud
@@ -8,5 +10,10 @@ package fr.mrcraftcod.java.tp1.pay;
  */
 public interface Waged
 {
+	/**
+	 * Get the weekly pay of this person.
+	 *
+	 * @return The amount to pay.
+	 */
 	double getWage();
 }

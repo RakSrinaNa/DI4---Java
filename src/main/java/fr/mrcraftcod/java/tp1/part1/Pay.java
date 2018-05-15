@@ -1,12 +1,14 @@
-package fr.mrcraftcod.java.tp1;
+package fr.mrcraftcod.java.tp1.part1;
 
-import fr.mrcraftcod.java.tp1.employees.Collaborator;
-import fr.mrcraftcod.java.tp1.employees.Employee;
-import fr.mrcraftcod.java.tp1.employees.Trader;
-import fr.mrcraftcod.java.tp1.employees.Worker;
+import fr.mrcraftcod.java.tp1.part1.employees.Collaborator;
+import fr.mrcraftcod.java.tp1.part1.employees.Employee;
+import fr.mrcraftcod.java.tp1.part1.employees.Trader;
+import fr.mrcraftcod.java.tp1.part1.employees.Worker;
 import java.util.ArrayList;
 
 /**
+ * The pay class.
+ * <p>
  * Created by Thomas Couchoud (MrCraftCod - zerderr@gmail.com) on 19/04/2018.
  *
  * @author Thomas Couchoud
@@ -14,10 +16,11 @@ import java.util.ArrayList;
  */
 public class Pay
 {
+	/**
+	 * @param args Not used.
+	 */
 	public static void main(String[] args)
 	{
-		System.out.println("Executing TP1\n");
-		
 		var employees = new ArrayList<Employee>();
 		employees.add(new Trader("Trader", "1", 1000));
 		employees.add(new Trader("Trader", "2", 2000));
