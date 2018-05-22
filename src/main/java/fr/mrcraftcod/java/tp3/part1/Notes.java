@@ -14,6 +14,9 @@ import java.util.stream.IntStream;
  */
 public class Notes
 {
+	/**
+	 * @param args List size.
+	 */
 	public static void main(String[] args)
 	{
 		ArrayList<Double> grades = new ArrayList<>();
@@ -60,6 +63,10 @@ public class Notes
 						break;
 				}
 			}
+			catch(NumberFormatException e)
+			{
+				System.out.println("Not a valid number!");
+			}
 			catch(Exception e)
 			{
 				System.out.println("Please be serious!");
@@ -68,6 +75,14 @@ public class Notes
 		while(!exit);
 	}
 	
+	/**
+	 * Add a grade to the list.
+	 *
+	 * @param grades The list of grades.
+	 * @param coeffs The list of coefficients.
+	 * @param grade  The grade to add.
+	 * @param coeff  The coeff to add.
+	 */
 	private static void addGrade(ArrayList<Double> grades, ArrayList<Integer> coeffs, double grade, int coeff)
 	{
 		if(grades == null)
@@ -76,11 +91,26 @@ public class Notes
 		coeffs.add(coeff);
 	}
 	
+	/**
+	 * Add a grade to the list.
+	 *
+	 * @param out    Where to print.
+	 * @param grades The list of grades.
+	 * @param coeffs The list of coefficients.
+	 */
 	private static void printGrades(PrintStream out, ArrayList<Double> grades, ArrayList<Integer> coeffs)
 	{
 		out.println(IntStream.range(0, grades.size()).mapToObj(i -> String.format("Pos %d : {note: %.2f, coeff: %d}", i, grades.get(i), coeffs.get(i))).collect(Collectors.joining("\n")));
 	}
 	
+	/**
+	 * Get the average.
+	 *
+	 * @param grades The list of grades.
+	 * @param coeffs The list of coefficients.
+	 *
+	 * @return The average.
+	 */
 	private static double getAverage(ArrayList<Double> grades, ArrayList<Integer> coeffs)
 	{
 		if(grades == null)
@@ -90,12 +120,29 @@ public class Notes
 		return IntStream.range(0, grades.size()).mapToDouble(i -> coeffs.get(i) * grades.get(i)).sum() / coeffs.stream().mapToInt(i -> i).sum();
 	}
 	
+	/**
+	 * Ask the user input.
+	 *
+	 * @param sc   The scanner.
+	 * @param text The text to display.
+	 *
+	 * @return The user input.
+	 */
 	private static String askLine(Scanner sc, String text)
 	{
 		System.out.print(text);
 		return sc.nextLine();
 	}
 	
+	/**
+	 * Modify a grade.
+	 *
+	 * @param grades   The grades.
+	 * @param coeffs   The coefficients.
+	 * @param pos      The position to modify.
+	 * @param newGrade The new grade to set.
+	 * @param newCoeff The new coefficient to set.
+	 */
 	private static void modifyNote(ArrayList<Double> grades, ArrayList<Integer> coeffs, int pos, double newGrade, int newCoeff)
 	{
 		if(grades == null)

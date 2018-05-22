@@ -6,6 +6,7 @@ import fr.mrcraftcod.java.tp2.part1.Factorial;
 import fr.mrcraftcod.java.tp2.part2.Menu;
 import fr.mrcraftcod.java.tp3.part1.Notes;
 import fr.mrcraftcod.java.tp3.part2.IntegerManager;
+import fr.mrcraftcod.java.tp4.ex1.Linked;
 import java.util.Arrays;
 
 /**
@@ -47,6 +48,15 @@ public class Main
 				case "tp3-2":
 					IntegerManager.main(Arrays.copyOfRange(args, 1, args.length));
 					break;
+				case "tp4-1":
+					Linked.main(Arrays.copyOfRange(args, 1, args.length));
+					break;
+				case "tp4-2":
+					break;
+				case "tp4-3":
+					break;
+				default:
+					System.out.println("Not found");
 			}
 		}
 	}

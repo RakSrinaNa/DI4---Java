@@ -14,6 +14,9 @@ import java.util.stream.Stream;
  */
 public class IntegerManager
 {
+	/**
+	 * @param args Not used.
+	 */
 	public static void main(String[] args)
 	{
 		List<Integer> list1 = newSingletonList(5);
@@ -40,6 +43,13 @@ public class IntegerManager
 		System.out.println("list4 size: " + size(list4));
 	}
 	
+	/**
+	 * Create a new list with one element.
+	 *
+	 * @param value The initial element.
+	 *
+	 * @return The created list.
+	 */
 	private static List<Integer> newSingletonList(int value)
 	{
 		ArrayList<Integer> list = new ArrayList<>();
@@ -47,31 +57,75 @@ public class IntegerManager
 		return list;
 	}
 	
+	/**
+	 * Add an element to the list.
+	 *
+	 * @param list  The list to add into.
+	 * @param value The value to add.
+	 */
 	private static void addElement(List<Integer> list, int value)
 	{
 		list.add(value);
 	}
 	
-	private static void printList(PrintStream out, String prefix, List<Integer> collection)
+	/**
+	 * Print a list.
+	 *
+	 * @param out    Where to print.
+	 * @param prefix The text before printing.
+	 * @param list   The list to display.
+	 */
+	private static void printList(PrintStream out, String prefix, List<Integer> list)
 	{
-		out.println(prefix + collection.stream().map(Object::toString).collect(Collectors.joining(", ")));
+		out.println(prefix + list.stream().map(Object::toString).collect(Collectors.joining(", ")));
 	}
 	
+	/**
+	 * Get the union of two lists.
+	 *
+	 * @param list1 The first list.
+	 * @param list2 The second list.
+	 *
+	 * @return The union.
+	 */
 	private static List<Integer> union(List<Integer> list1, List<Integer> list2)
 	{
 		return Stream.concat(list1.stream(), list2.stream()).collect(Collectors.toList());
 	}
 	
+	/**
+	 * Get the intersection of two lists.
+	 *
+	 * @param list1 The first list.
+	 * @param list2 The second list.
+	 *
+	 * @return The intersection.
+	 */
 	private static List<Integer> intersect(List<Integer> list1, List<Integer> list2)
 	{
 		return list1.stream().filter(list2::contains).collect(Collectors.toList());
 	}
 	
+	/**
+	 * Tell if an element is inside a list.
+	 *
+	 * @param list  The list.
+	 * @param value The element to test.
+	 *
+	 * @return True if inside, false otherwise.
+	 */
 	private static boolean isIn(List<Integer> list, int value)
 	{
 		return list.contains(value);
 	}
 	
+	/**
+	 * Get the size of a list.
+	 *
+	 * @param list The list.
+	 *
+	 * @return The list's size.
+	 */
 	private static int size(List<Integer> list)
 	{
 		return list.size();
