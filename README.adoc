@@ -1,0 +1,3 @@
+== TP Java
+Chaque TP se trouve dans son propre package.
+Ici l'efficacité n'était pas au rendez-vous, le but était plus de le faie en le moins de lignes possible. L'API stream a donc été utilisé le maximum possible.
