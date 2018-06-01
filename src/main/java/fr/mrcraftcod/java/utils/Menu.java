@@ -71,6 +71,7 @@ public class Menu
 				catch(IndexOutOfBoundsException e)
 				{
 					System.out.println("Given index is not valid");
+					e.printStackTrace();
 				}
 				catch(NumberFormatException e)
 				{

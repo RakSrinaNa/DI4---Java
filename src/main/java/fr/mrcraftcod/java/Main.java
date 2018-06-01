@@ -9,6 +9,7 @@ import fr.mrcraftcod.java.tp3.part2.IntegerManager;
 import fr.mrcraftcod.java.tp4.ex1.Linked;
 import fr.mrcraftcod.java.tp5.ex1.DrawingParty;
 import fr.mrcraftcod.java.tp5.ex2.ShelfManagement;
+import fr.mrcraftcod.java.tp6.ex2.SetParty;
 import java.util.Arrays;
 
 /**
@@ -62,6 +63,11 @@ public class Main
 					break;
 				case "tp5-2":
 					ShelfManagement.main(Arrays.copyOfRange(args, 1, args.length));
+					break;
+				case "tp6-1":
+					break;
+				case "tp6-2":
+					SetParty.main(Arrays.copyOfRange(args, 1, args.length));
 					break;
 				default:
 					System.out.println("Not found");
