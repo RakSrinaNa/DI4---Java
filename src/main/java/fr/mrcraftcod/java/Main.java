@@ -7,6 +7,8 @@ import fr.mrcraftcod.java.tp2.part2.Menu;
 import fr.mrcraftcod.java.tp3.part1.Notes;
 import fr.mrcraftcod.java.tp3.part2.IntegerManager;
 import fr.mrcraftcod.java.tp4.ex1.Linked;
+import fr.mrcraftcod.java.tp5.ex1.DrawingParty;
+import fr.mrcraftcod.java.tp5.ex2.ShelfManagement;
 import java.util.Arrays;
 
 /**
@@ -54,6 +56,12 @@ public class Main
 				case "tp4-2":
 					break;
 				case "tp4-3":
+					break;
+				case "tp5-1":
+					DrawingParty.main(Arrays.copyOfRange(args, 1, args.length));
+					break;
+				case "tp5-2":
+					ShelfManagement.main(Arrays.copyOfRange(args, 1, args.length));
 					break;
 				default:
 					System.out.println("Not found");

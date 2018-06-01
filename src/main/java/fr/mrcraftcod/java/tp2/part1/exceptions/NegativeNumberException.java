@@ -10,6 +10,8 @@ package fr.mrcraftcod.java.tp2.part1.exceptions;
  */
 public class NegativeNumberException extends Exception
 {
+	private static final long serialVersionUID = -6714917445180079449L;
+	
 	/**
 	 * Constructor.
 	 *

@@ -10,6 +10,8 @@ package fr.mrcraftcod.java.tp2.part1.exceptions;
  */
 public class TooBigException extends Exception
 {
+	private static final long serialVersionUID = -4251956308281908195L;
+	
 	/**
 	 * Constructor.
 	 *

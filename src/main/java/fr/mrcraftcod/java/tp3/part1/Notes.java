@@ -1,5 +1,6 @@
 package fr.mrcraftcod.java.tp3.part1;
 
+import fr.mrcraftcod.java.utils.Menu;
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -21,58 +22,22 @@ public class Notes
 	{
 		ArrayList<Double> grades = new ArrayList<>();
 		ArrayList<Integer> coeffs = new ArrayList<>();
-		addGrade(grades, coeffs, 12, 1);
-		addGrade(grades, coeffs, 14, 1);
-		addGrade(grades, coeffs, 9, 1);
-		printGrades(System.out, grades, coeffs);
-		System.out.println("Average: " + getAverage(grades, coeffs));
-		addGrade(grades, coeffs, 13, 1);
-		printGrades(System.out, grades, coeffs);
-		System.out.println("Average: " + getAverage(grades, coeffs));
+		// addGrade(grades, coeffs, 12, 1);
+		// addGrade(grades, coeffs, 14, 1);
+		// addGrade(grades, coeffs, 9, 1);
+		// printGrades(System.out, grades, coeffs);
+		// System.out.println("Average: " + getAverage(grades, coeffs));
+		// addGrade(grades, coeffs, 13, 1);
+		// printGrades(System.out, grades, coeffs);
+		// System.out.println("Average: " + getAverage(grades, coeffs));
 		
-		boolean exit = false;
 		Scanner sc = new Scanner(System.in);
-		do
-		{
-			try
-			{
-				switch(askLine(sc, "Enter your command: "))
-				{
-					case "add":
-					case "new":
-						addGrade(grades, coeffs, Double.parseDouble(askLine(sc, "Enter the grade: ")), Integer.parseInt(askLine(sc, "Enter the coefficient: ")));
-						break;
-					case "list":
-					case "print":
-					case "show":
-						printGrades(System.out, grades, coeffs);
-						break;
-					case "modify":
-					case "change":
-						modifyNote(grades, coeffs, Integer.parseInt(askLine(sc, "Enter the position of the grade to change: ")), Double.parseDouble(askLine(sc, "Enter the new grade to set: ")), Integer.parseInt(askLine(sc, "Enter the new coefficient to set: ")));
-						break;
-					case "average":
-						System.out.println(getAverage(grades, coeffs));
-						break;
-					case "exit":
-					case "quit":
-						exit = true;
-						break;
-					default:
-						System.out.println("Unknown command, try again");
-						break;
-				}
-			}
-			catch(NumberFormatException e)
-			{
-				System.out.println("Not a valid number!");
-			}
-			catch(Exception e)
-			{
-				System.out.println("Please be serious!");
-			}
-		}
-		while(!exit);
+		Menu menu = new Menu();
+		menu.addAction("Add", () -> addGrade(grades, coeffs, Double.parseDouble(askLine(sc, "Enter the grade: ")), Integer.parseInt(askLine(sc, "Enter the coefficient: "))));
+		menu.addAction("List", () -> printGrades(System.out, grades, coeffs));
+		menu.addAction("Modify a grade", () -> modifyNote(grades, coeffs, Integer.parseInt(askLine(sc, "Enter the position of the grade to change: ")), Double.parseDouble(askLine(sc, "Enter the new grade to set: ")), Integer.parseInt(askLine(sc, "Enter the new coefficient to set: "))));
+		menu.addAction("Average", () -> System.out.println(getAverage(grades, coeffs)));
+		menu.run();
 	}
 	
 	/**

@@ -10,6 +10,8 @@ package fr.mrcraftcod.java.tp2.part2.exceptions;
  */
 public class NotAnIntegerException extends Exception
 {
+	private static final long serialVersionUID = 8693488008398662790L;
+	
 	/**
 	 * Constructor.
 	 *

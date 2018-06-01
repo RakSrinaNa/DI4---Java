@@ -8,6 +8,11 @@ package fr.mrcraftcod.java.tp4.ex3;
  */
 public class HollowPuppet extends RussianPuppet
 {
+	/**
+	 * Constructor.
+	 *
+	 * @param size The puppet's size.
+	 */
 	public HollowPuppet(int size)
 	{
 		super(size);

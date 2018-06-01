@@ -36,6 +36,7 @@ public class Menu
 				"Hamburger",
 				"Pain"
 		};
+		//noinspection ConstantConditions
 		if(choices.length > 0)
 			System.out.println("Choice selected: " + choices[askChoice(choices) - 1]);
 		else

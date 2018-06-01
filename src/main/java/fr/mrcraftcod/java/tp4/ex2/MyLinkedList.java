@@ -58,10 +58,8 @@ public class MyLinkedList<E extends Comparable<E>>
 	 * @param index The index to fetch.
 	 *
 	 * @return The element at the given index.
-	 *
-	 * @throws IndexOutOfBoundsException If the index is out of bounds.
 	 */
-	public E get(int index) throws IndexOutOfBoundsException
+	public E get(int index)
 	{
 		return list.get(index);
 	}

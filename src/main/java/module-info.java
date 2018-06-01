@@ -5,4 +5,5 @@
  * @since 2018-04-19
  */
 module fr.mrcraftcod.java {
+	requires java.desktop;
 }

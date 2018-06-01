@@ -10,6 +10,8 @@ package fr.mrcraftcod.java.tp2.part2.exceptions;
  */
 public class NotInRangeException extends Exception
 {
+	private static final long serialVersionUID = -707197718234980859L;
+	
 	/**
 	 * Constructor.
 	 *

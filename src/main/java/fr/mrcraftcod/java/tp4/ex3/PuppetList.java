@@ -10,6 +10,8 @@ import java.util.LinkedList;
  */
 public class PuppetList extends LinkedList<RussianPuppet>
 {
+	private static final long serialVersionUID = -4652921028208565450L;
+	
 	/**
 	 * Constructor. Create an empty list.
 	 */

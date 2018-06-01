@@ -76,14 +76,14 @@ public class Scheduler
 	 */
 	private static List<Pair<Integer, List<Integer>>> overlaps(HashMap<Integer, Show> schedule)
 	{
-		return schedule.keySet().stream().map(key -> {
+		return schedule.keySet().stream().map(key -> { //For each hour
 			int endHour = schedule.get(key).getLength() + key - 1;
-			List<Integer> overlappedHours = schedule.keySet().stream().filter(k -> !k.equals(key)).flatMap(k -> {
+			List<Integer> overlappedHours = schedule.keySet().stream().filter(k -> !k.equals(key)).flatMap(k -> { //Find all other shows and get the hours they are scheduled
 				List<Integer> hours = new LinkedList<>();
 				for(int i = 0; i < schedule.get(k).getLength(); i++)
 					hours.add(k + i);
 				return hours.stream();
-			}).filter(v -> v >= key && v <= endHour).collect(Collectors.toList());
+			}).filter(v -> v >= key && v <= endHour).collect(Collectors.toList()); //Get the overlapping hours
 			return new Pair<>(key, overlappedHours);
 		}).collect(Collectors.toList());
 	}
@@ -95,7 +95,7 @@ public class Scheduler
 	 */
 	private static void displayFullShows(HashMap<Integer, Show> schedule)
 	{
-		schedule.keySet().stream().flatMap(k -> {
+		schedule.keySet().stream().flatMap(k -> { //Build the list of every hours
 			List<Pair<Integer, Integer>> shows = new LinkedList<>();
 			for(int i = 0; i < schedule.get(k).getLength(); i++)
 				shows.add(new Pair<>(k + i, k));
